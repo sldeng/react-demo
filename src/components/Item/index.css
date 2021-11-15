@@ -1,0 +1,16 @@
+.item{
+    display: inline-flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    border-bottom: 1px solid red;
+    
+}
+.item:hover {
+    background-color: #ccc;
+}
+.item:hover button{
+    display: block !important;
+}
