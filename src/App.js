@@ -32,6 +32,13 @@ export default class App extends Component{
     })
   }
   delRow=(index)=>{
+    const demo = this.state.todos
+    demo.splice(index,1)
+    console.log(demo)
+    this.setState({
+      todos:demo
+    })
+
     
   }
   render(){
@@ -39,7 +46,7 @@ export default class App extends Component{
       <div className="layout">
       最外层元素
       <Header  addFunction={this.addFunction}/>
-      <List todos={this.state.todos} delete={delRow}/>
+      <List todos={this.state.todos} delRow={this.delRow}/>
       <Footer/>
   </div>
     )

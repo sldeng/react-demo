@@ -7,8 +7,8 @@ class List extends Component{
         return(
             <div className="list">
                 {
-                    this.props.todos.map(it=>{
-                        return <Item key={it.id} {...it}/>
+                    this.props.todos.map((it,index)=>{
+                        return <Item key={it.id} index={index} todos={it} delRow={this.props.delRow}/>
                     })
                 }
               

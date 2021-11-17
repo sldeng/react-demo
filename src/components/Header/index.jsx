@@ -5,7 +5,7 @@ export default class Header extends Component {
     enterFunction=(event)=>{
         const {keyCode,target} = event
         console.log(keyCode,target,'event')
-        if(keyCode===13){
+        if(keyCode===13&&target.value){
             const demo = {name:target.value,done:false,id:nanoid()}
             this.props.addFunction(demo)
         }
