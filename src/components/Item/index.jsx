@@ -6,7 +6,7 @@ class Item extends Component{
         return(
             <div className="item">
                 <span>
-                    <input type="checkbox" defaultChecked={done} />
+                    <input type="checkbox" checked={done}  onChange={this.props.singleChange(this.props.index)}/>
                     <span>{name}</span>
                 </span>
                 <button style={{display:'none'}} onClick={()=>{this.props.delRow(this.props.index)}}>删除</button>

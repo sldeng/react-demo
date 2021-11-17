@@ -1,5 +1,8 @@
 .footer{
     display: inline-flex;
     align-items: center;
-    width: 200px;
+}
+.count{
+    font-weight: bolder;
+    color: red;
 }

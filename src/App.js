@@ -38,16 +38,37 @@ export default class App extends Component{
     this.setState({
       todos:demo
     })
-
-    
+  }
+  allchange=(event)=>{
+    // console.log('1111111')
+    const {checked} = event.target
+    const { todos } = this.state
+    todos.forEach(it=>{
+      it.done = checked
+    })
+    this.setState({
+      todos
+    })
+  }
+  singleChange=(index)=>{
+    return(event)=>{
+      // debugger
+      const {checked} = event.target
+      const { todos } = this.state
+      todos[index].done = checked
+      this.setState({
+        todos
+      })
+      
+    }
   }
   render(){
     return (
       <div className="layout">
       最外层元素
       <Header  addFunction={this.addFunction}/>
-      <List todos={this.state.todos} delRow={this.delRow}/>
-      <Footer/>
+      <List todos={this.state.todos} delRow={this.delRow} singleChange={this.singleChange} />
+      <Footer allchange={this.allchange} todos={this.state.todos}/>
   </div>
     )
   }
