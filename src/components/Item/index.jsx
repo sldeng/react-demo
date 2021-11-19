@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './index.css'
 class Item extends Component{
     render(){
@@ -14,4 +15,10 @@ class Item extends Component{
         )
     }
 }
+Item.propTypes = {
+    index: PropTypes.number,
+    todos:PropTypes.object,
+    unique:PropTypes.string.isRequired
+
+  };
 export default Item
